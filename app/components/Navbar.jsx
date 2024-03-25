@@ -49,12 +49,6 @@ const Navbar = () => {
           </button>
         </div>
       </nav>
-      <style jsx global>{`
-        .dark {
-          background-color: #333;
-          color: #fff;
-        }
-      `}</style>
     </>
   );
 };
