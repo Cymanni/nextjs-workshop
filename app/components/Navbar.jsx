@@ -4,16 +4,13 @@ import Link from 'next/link';
 import '@/app/globals.css';
 
 const Navbar = () => {
-  const [darkMode, setDarkMode] = useState(false); 
+  let darkMode = false; 
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    if (!darkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+    darkMode = !darkMode;
+    document.documentElement.classList.toggle('dark', darkMode);
   };
+  
 
   const links = [
     { href: '/about', label: 'about' },
