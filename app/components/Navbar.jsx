@@ -15,6 +15,7 @@ const Navbar = () => {
     { href: '/about', label: 'about' },
     { href: '/dashboard', label: 'dashboard' },
     { href: '/contact', label: 'contact' },
+    { href: '/dummydata', label: 'dummydata' },
   ];
 
   return (
