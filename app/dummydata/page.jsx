@@ -10,8 +10,8 @@ const DummyDataPage = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get('https://dummyjson.com/products');
-        setProduct(response.data);
-        console.log(response.data);
+        setProduct(response.data.products);
+        console.log(respe.data);
       } catch (error) {
         setError(error, "error");
       }
@@ -20,14 +20,22 @@ const DummyDataPage = () => {
     fetchData();
   }, []);
 
-  
+  // console.log(product)  
 
   return (
     <>
     <div>
-    <p>Name: {product.title}</p>
-    <p>Price: {product.price}</p>
-  </div>
+      {product.length > 0 ? (product.map(item => {
+        return (
+          <div key={item.id} className="border p-4 my-4">
+            <h1 className="text-2xl font-bold">{item.title}</h1>
+            <p className="text-sm text-gray-500">Price: {item.price}</p>
+          </div>
+        );
+      })) :( <p> loading....</p>)}
+      
+    </div>
+ 
   </>
   );
 }
